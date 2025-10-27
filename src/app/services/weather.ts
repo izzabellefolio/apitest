@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class Weather {
   private apiKey = 'a0a2115ccac8c431e811db7befcf8ef8';
-  private apiURL = 'http://api.weatherstack.com/current';
+  private apiURL = '/api/current';
 
   constructor(private http: HttpClient){}
 
@@ -16,3 +16,6 @@ export class Weather {
     return this.http.get(url);
   }
 }
+
+//ng serve --proxy-config src/proxy.conf.json
+//http://api.weatherstack.com/current?access_key=a0a2115ccac8c431e811db7befcf8ef8&query=New%20York

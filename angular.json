@@ -34,7 +34,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "600kB",
                   "maximumError": "1MB"
                 },
                 {
@@ -60,7 +60,8 @@
               "buildTarget": "angular_weather:build:production"
             },
             "development": {
-              "buildTarget": "angular_weather:build:development"
+              "buildTarget": "angular_weather:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
