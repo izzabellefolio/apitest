@@ -6,15 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Weather {
-  private apiKey = 'dba8117fd2604ff5b7b44805252310';
-  private apiURL = 'https://api.weatherapi.com/v1/current.json';
+  private apiKey = 'a0a2115ccac8c431e811db7befcf8ef8';
+  private apiURL = 'https://api.weatherstack.com/current';
 
   constructor(private http: HttpClient){}
 
   getWeather(city: string): Observable<any>{
-    const url = `${this.apiURL}?key=${this.apiKey}&q=${city}`;
+    const url = `${this.apiURL}?access_key=${this.apiKey}&query=${city}`;
     return this.http.get(url);
   }
 }
-
-//https://api.weatherapi.com/v1/current.json?key=dba8117fd2604ff5b7b44805252310&q=London
